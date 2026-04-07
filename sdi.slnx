@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="entrance-campaign/entrance-campaign.vcxproj" Id="95abf750-9e73-4dfa-86a0-8f15a8dcabc9" />
+</Solution>
