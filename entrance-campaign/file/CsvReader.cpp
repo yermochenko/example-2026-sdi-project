@@ -1,6 +1,6 @@
 #include "CsvReader.h"
 
-#include <sstream>
+#include "..\util\splitter.h"
 
 CsvReader::CsvReader(std::string filename)
 {
@@ -16,14 +16,7 @@ std::vector<std::string>* CsvReader::readLine()
 	std::string row;
 	if (std::getline(fin, row))
 	{
-		std::vector<std::string>* result = new std::vector<std::string>();
-		std::istringstream sin(row);
-		std::string cell;
-		while (std::getline(sin, cell, ';'))
-		{
-			result->push_back(cell);
-		}
-		return result;
+		return split(row, ';');
 	}
 	else
 	{
