@@ -39,3 +39,23 @@ void Specialty::setQualification(std::string qualification)
 {
 	this->qualification = qualification;
 }
+
+unsigned int Specialty::getRecruitmentPlan() const
+{
+	return recruitmentPlan;
+}
+
+void Specialty::setRecruitmentPlan(unsigned int recruitmentPlan)
+{
+	this->recruitmentPlan = recruitmentPlan;
+}
+
+std::map<std::string, int> Specialty::getCTSubjects() const
+{
+	return ctSubjects;
+}
+
+void Specialty::setCTSubjects(std::map<std::string, int> ctSubjects)
+{
+	this->ctSubjects = ctSubjects;
+}
