@@ -130,25 +130,34 @@
     <ClCompile Include="entity\Specialty.cpp" />
     <ClCompile Include="entrance-campaign.cpp" />
     <ClCompile Include="file\CsvReader.cpp" />
+    <ClCompile Include="file\CsvWriter.cpp" />
     <ClCompile Include="menu\ExitMenuItem.cpp" />
     <ClCompile Include="menu\Menu.cpp" />
     <ClCompile Include="menu\MenuItem.cpp" />
     <ClCompile Include="menu\SpecAddMenuItem.cpp" />
     <ClCompile Include="menu\SpecListMenuItem.cpp" />
     <ClCompile Include="storage\SpecialtyStorage.cpp" />
+    <ClCompile Include="util\formatter.cpp" />
+    <ClCompile Include="util\joiner.cpp" />
+    <ClCompile Include="util\parser.cpp" />
+    <ClCompile Include="util\splitter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity\Specialty.h" />
     <ClInclude Include="file\CsvReader.h" />
+    <ClInclude Include="file\CsvWriter.h" />
     <ClInclude Include="menu\ExitMenuItem.h" />
     <ClInclude Include="menu\Menu.h" />
     <ClInclude Include="menu\MenuItem.h" />
     <ClInclude Include="menu\SpecAddMenuItem.h" />
     <ClInclude Include="menu\SpecListMenuItem.h" />
     <ClInclude Include="storage\SpecialtyStorage.h" />
+    <ClInclude Include="util\formatter.h" />
+    <ClInclude Include="util\joiner.h" />
+    <ClInclude Include="util\parser.h" />
+    <ClInclude Include="util\splitter.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="file.csv" />
     <None Include="specialities.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

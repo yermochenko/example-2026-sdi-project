@@ -26,17 +26,26 @@ bool SpecListMenuItem::execute()
     std::cout << std::left;
     for (Specialty* specialty : *specialities)
     {
-        std::map<std::string, int> ctSubjects = specialty->getCTSubjects();
-        std::map<std::string, int>::iterator it = ctSubjects.begin(), end = ctSubjects.end();
         std::cout << "| "
             << std::setw(12) << specialty->getCode() << " | "
             << std::setw(50) << specialty->getName() << " | "
-            << std::setw(4)  << specialty->getRecruitmentPlan() << " | "
-            << std::setw(20) << it->first << " |" << std::endl;
-        for(it++; it != end; it++)
+            << std::setw(4)  << specialty->getRecruitmentPlan() << " | ";
+        std::map<std::string, int> ctSubjects = specialty->getCTSubjects();
+        std::map<std::string, int>::iterator it = ctSubjects.begin(), end = ctSubjects.end();
+        if (it != end)
         {
-            std::cout << emptyCells << ' '
-                << std::setw(20) << it->first << " |" << std::endl;
+            std::cout << std::setw(20) << it->first << " |" << std::endl;
+            it++;
+            while (it != end)
+            {
+                std::cout << emptyCells << ' '
+                    << std::setw(20) << it->first << " |" << std::endl;
+                it++;
+            }
+        }
+        else
+        {
+            std::cout << std::string(20, ' ') << " |" << std::endl;
         }
         std::cout << horisontalLine << std::endl;
         delete specialty;
