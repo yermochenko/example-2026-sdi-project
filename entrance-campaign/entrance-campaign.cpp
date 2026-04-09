@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "menu/Menu.h"
+#include "util/parser.h"
 
 int main()
 {
@@ -18,17 +20,24 @@ int main()
         }
         std::cout << std::endl;
         std::cout << "Enter menu item number > ";
-        int menuItemIndex;
-        std::cin >> menuItemIndex;
-        menuItemIndex--;
-        std::cout << std::endl;
-        if (0 <= menuItemIndex && menuItemIndex < menu.size())
+        try
         {
-            isWork = menu[menuItemIndex]->execute();
+            std::string userChoice;
+            std::getline(std::cin, userChoice);
+            int menuItemIndex = parseInt(userChoice) - 1;
+            std::cout << std::endl;
+            if (0 <= menuItemIndex && menuItemIndex < menu.size())
+            {
+                isWork = menu[menuItemIndex]->execute();
+            }
+            else
+            {
+                std::cout << "incorrect menu item number (should be between 1 and " << menu.size() << ")" << std::endl;
+            }
         }
-        else
+        catch (ParseException& e)
         {
-            std::cout << "incorrect menu item number" << std::endl;
+            std::cout << "incorrect menu item number: " << e.getMessage() << std::endl;
         }
         std::cout << std::endl;
         system("pause");
